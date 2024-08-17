@@ -14,7 +14,7 @@ final ApiServices apiServices;
   }) async {
     try {
       var response = await apiServices.postData(urll: addcart, data: dataa);
-      print(response.data);
+    
 
       return ApiResult.success(CartModel.fromJson(response.data));
     } catch (error) {

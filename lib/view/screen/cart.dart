@@ -1,17 +1,14 @@
-import 'package:ecommerce_pro/controller/address/address_state.dart';
 import 'package:ecommerce_pro/controller/cart/Get_Cart.dart';
 import 'package:ecommerce_pro/controller/cart/add_delete_cart_controller.dart';
 import 'package:ecommerce_pro/controller/resul_state/result_state.dart';
 import 'package:ecommerce_pro/core/class/network_exceptions.dart';
 import 'package:ecommerce_pro/core/di/dependency_injection.dart';
 import 'package:ecommerce_pro/data/model/cart_model.dart';
-
 import 'package:ecommerce_pro/view/widget/cart/custom_bottombar.dart';
 import 'package:ecommerce_pro/view/widget/cart/custom_cart.dart';
 import 'package:ecommerce_pro/view/widget/favourite/Custom_Appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../controller/Favourite/state.dart';
 
 class Cart extends StatelessWidget {

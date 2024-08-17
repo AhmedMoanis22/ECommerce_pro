@@ -16,8 +16,6 @@ class CategoriesCubit extends Cubit<ResultState<CategModel>> {
     var data = await catrepo.categoriesReopstry();
     data.when(success: (categModel) {
       cat = categModel.categories!;
-      print(cat![0].catImg);
-      print(cat![0].catNameAr);
       emit(ResultState.success(categModel));
     }, failure: (NetworkExceptions networkExceptions) {
       emit(ResultState.error(networkExceptions));

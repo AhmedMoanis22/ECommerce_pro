@@ -20,7 +20,6 @@ class GetCartCubit extends Cubit<ResultState<CartModel>> {
     data.when(success: (CartModel cartModel) {
       cartList = cartModel;
       cartitems = cartModel.items!;
-      log(cartitems[0].cost.toString());
       emit(ResultState.success(cartModel));
     }, failure: (NetworkExceptions networkExceptions) {
       emit(ResultState.error(networkExceptions));

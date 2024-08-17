@@ -24,9 +24,6 @@ class ItemsCubit extends Cubit<ResultState<ItemsModel>> {
     log(data.toString());
     data.when(success: (ItemsModel itemsModel) {
       itemList = itemsModel.items;
-      log(itemList![0].itemNameEn.toString());
-      print('////////////////');
-
       emit(ResultState.success(itemsModel));
     }, failure: (NetworkExceptions networkExceptions) {
       log(networkExceptions.toString());

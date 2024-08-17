@@ -14,7 +14,7 @@ final ApiServices apiServices;
   }) async {
     try {
       var response = await apiServices.getData(urll: getouponEndPoint);
-      print(response);
+    
 
       return ApiResult.success(ItemsModel.fromJson(response.data));
     } catch (error) {

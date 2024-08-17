@@ -17,13 +17,11 @@ class GetAllFavouriteCubit extends Cubit<ResultState<ItemsModel>> {
   void getallFav() async {
     emit(const ResultState.loading());
     var data = await favouriteRepostry.getFavourite();
-    log(data.toString());
+
     data.when(success: (ItemsModel favouriteModel) {
       favouriteList = favouriteModel.items!;
 
       log(favouriteList[0].itemNameEn.toString());
-
-      print('favouriteeeeeee');
 
       emit(ResultState.success(favouriteModel));
     }, failure: (NetworkExceptions networkExceptions) {
@@ -31,8 +29,5 @@ class GetAllFavouriteCubit extends Cubit<ResultState<ItemsModel>> {
     });
   }
 
-  void changeIconFav(int id)
-  {
 
-  }
 }

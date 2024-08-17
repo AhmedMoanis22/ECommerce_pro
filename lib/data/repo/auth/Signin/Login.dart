@@ -13,7 +13,7 @@ class LoginRepo {
       {required Map<String, dynamic> dataa}) async {
     try {
       var response = await apiServices.postData(urll: loginEndPoint, data: dataa);
-      print(response.data);
+     
       return ApiResult.success(UserModel.fromJson(response.data));
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));

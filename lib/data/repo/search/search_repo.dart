@@ -15,7 +15,7 @@ final ApiServices apiServices;
   }) async {
     try {
       var response = await apiServices.getData(urll: serachEndPoint, data: dataa);
-      print(response);
+ 
 
       return ApiResult.success(ItemsModel.fromJson(response.data));
     } catch (error) {

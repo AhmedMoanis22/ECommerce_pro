@@ -27,10 +27,8 @@ class SearchCubit extends Cubit<ResultState<ItemsModel>> {
       'userId': sharedPreferences!.getInt('User_id'),
       'search': name,
     });
-    log(data.toString());
     data.when(success: (ItemsModel itemsModel) {
       searchList = itemsModel.items!;
-      log(searchList[0].itemNameAr!);
       isSearch = true;
       emit(ResultState.success(itemsModel));
     }, failure: (NetworkExceptions networkExceptions) {

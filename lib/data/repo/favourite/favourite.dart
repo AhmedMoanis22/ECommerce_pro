@@ -14,7 +14,7 @@ final ApiServices apiServices;
   }) async {
     try {
       var response = await apiServices.postData(urll: postfav, data: dataa);
-      print(response.data);
+
 
       return ApiResult.success(ItemsModel.fromJson(response.data));
     } catch (error) {

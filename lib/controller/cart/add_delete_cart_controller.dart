@@ -20,8 +20,6 @@ class AddCartCubit extends Cubit<AddAndDeleteState> {
       'itemId': itemid,
     });
     data.when(success: (CartModel cartModel) {
-      log('cartttttt'.toString());
-      log(cartModel.msg!);
       emit(SuccessAdd(msg: cartModel.msg!));
     }, failure: (NetworkExceptions networkExceptions) {
       emit(ErrorAdd(msg: networkExceptions));

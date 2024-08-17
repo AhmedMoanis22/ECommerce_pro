@@ -4,7 +4,7 @@ class CustomForTextAuth extends StatelessWidget {
   final String title;
   final IconData prefixIcon;
   final String description;
-  final String? Function(String?) valid;
+  final String Function(String?)? valid;
   final TextEditingController? controller;
   final TextInputType? keyboard;
   final bool? obsecure;
@@ -16,7 +16,7 @@ class CustomForTextAuth extends StatelessWidget {
     required this.prefixIcon,
     this.controller,
     required this.description,
-    required this.valid,
+    this.valid,
     this.keyboard,
     this.obsecure,
     this.suffixIcon,

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:ecommerce_pro/controller/Favourite/state.dart';
 import 'package:ecommerce_pro/core/class/network_exceptions.dart';
 import 'package:ecommerce_pro/data/model/ItemsModel.dart';
@@ -20,7 +18,6 @@ class AddAndDeleteFavouriteCubit extends Cubit<AddAndDeleteState> {
       'itemId': itemId,
     });
     data.when(success: (ItemsModel itemsModel) {
-      log(itemsModel.msg.toString());
       emit(SuccessAdd(msg: itemsModel.msg!));
     }, failure: (NetworkExceptions networkExceptions) {
       emit(ErrorAdd(msg: networkExceptions));
@@ -34,9 +31,9 @@ class AddAndDeleteFavouriteCubit extends Cubit<AddAndDeleteState> {
       'itemId': itemId,
     });
 
-    log(data.toString());
+
     data.when(success: (ItemsModel itemsModel) {
-      log(itemsModel.msg!);
+
       emit(SuccessDelete(msg: itemsModel.msg!));
     }, failure: (NetworkExceptions networkExceptions) {
       emit(ErrorDelete(error: networkExceptions));
@@ -45,9 +42,9 @@ class AddAndDeleteFavouriteCubit extends Cubit<AddAndDeleteState> {
   void deleteAllFavourite() async {
     emit(LoadingAddAndDelete());
     var data = await favouriteRepostry.deleteFavourite();
-    log(data.toString());
+
     data.when(success: (ItemsModel favouriteModel) {
-      log(favouriteModel.msg!);
+  
       emit(SuccessDeleteAll(msg: favouriteModel.msg!));
     }, failure: (NetworkExceptions networkExceptions) {
       emit(ErrorDelete(error: networkExceptions));
